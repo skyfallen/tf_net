@@ -37,7 +37,7 @@ import read_cuts
 def var_exists(a):
     return( a in vars() or a in globals() )
 
-DATADIR=os.environ["DREAM_ENCODE_DATADIR"]
+DATADIR=os.environ["../data/"]
 
 # Net hyparameters
 seq_flank=200
