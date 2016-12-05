@@ -9,7 +9,7 @@ import glob
 
 cell_type_id=int(os.environ["SLURM_ARRAY_TASK_ID"])
 
-DATADIR=os.environ["DREAM_ENCODE_DATADIR"]
+DATADIR = '../data/'
 
 cell_types=open("cell_types.txt","rb").readlines()
 

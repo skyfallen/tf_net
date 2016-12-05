@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for f in $DREAM_ENCODE_DATADIR/DNase/*.bam; do
+for f in /gpfs/rocket/dmytro/dream_encode/DNase/*.bam; do
     echo $f
     outfile=$f.bai
     if [ ! -f $outfile ]; then
