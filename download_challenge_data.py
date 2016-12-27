@@ -11,7 +11,9 @@ syn.login(email = 'dmytrofishman@gmail.com', password = 'deepChromatin')
 
 folder_ids = { 'syn6176232' : 'DNase/' ,
                'syn6176231' : 'gene_expression/' ,
-               'syn6181335' : 'labels/' }
+	       'syn6181333' : 'ChiPseq/',
+	       'syn6184307' : 'annotations/'}
+               #'syn6181335' : 'labels/' }
                
 #DATADIR=os.environ["DREAM_ENCODE_DATADIR"]
 DATADIR = '/gpfs/rocket/dmytro/dream_encode/'
@@ -23,11 +25,12 @@ other_files=[ 'syn6184309', # genome sequence
 
 if not os.path.isdir(DATADIR): os.mkdir(DATADIR)
 
-for f in other_files:
-    print 'loading ' + str(f) + '...'
-    syn.get(f, downloadLocation=DATADIR)
+#for f in other_files:
+#    print 'loading ' + str(f) + '...'
+#    syn.get(f, downloadLocation=DATADIR)
                
 for folder_id in folder_ids:
+    print 'loading ' + str(folder_id) + '...'
 
     # Get folder
     folder = syn.get(folder_id)

@@ -37,7 +37,7 @@ import read_cuts
 def var_exists(a):
     return( a in vars() or a in globals() )
 
-DATADIR=os.environ["../data/"]
+DATADIR="../data/"
 
 # Net hyparameters
 seq_flank=200
@@ -59,7 +59,7 @@ n_hidden=20
 # What needs loading? Useful for running interactively.
 print("Loading genome")
 if not var_exists('dicgen'):
-    dicgen = utils.get_fasta_chrom(DATADIR + "hg19.genome.fa.gz", [ "chr%i" % i for i range(1,23) ] )
+    dicgen = utils.get_fasta_chrom(DATADIR + "hg19.genome.fa.gz", [ "chr%i" % i for i in range(1,23) ] )
     
 batch_size=1000
 

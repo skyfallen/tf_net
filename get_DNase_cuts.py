@@ -7,7 +7,8 @@ import os
 
 import glob
 
-cell_type_id=int(os.environ["SLURM_ARRAY_TASK_ID"])
+#cell_type_id=int(os.environ["SLURM_ARRAY_TASK_ID"])
+cell_type_id = 1
 
 DATADIR = '../data/'
 
@@ -18,6 +19,9 @@ cell_type=cell_types[ cell_type_id ].strip()
 filebase=DATADIR + "/DNase/DNASE." + cell_type
 
 bams=glob.glob(filebase+".*.bam")
+print bams
+
+#return 0
 
 if cell_type=="K562": # there are so many otherwise
     bams=[ filebase + '.biorep2.techrep%i.bam' % i for i in (3,5) ]

@@ -5,7 +5,7 @@ import timeit
 
 import os
 
-DATADIR=os.environ["DREAM_ENCODE_DATADIR"]
+DATADIR = '../data/'
 
 ps=pysam.AlignmentFile(DATADIR+"DNase/DNASE.A549.biorep1.techrep1.bam","rb")
 chrs=ps.references
@@ -73,7 +73,7 @@ def read_both(cell_type):
     where={}
     total={}
     for strand in ("+","-"):
-        (data[strand],where[strand],total[strand],max_val)=read_cuts(DATADIR+"DNASE.%s%s.txt.gz" % (cell_type,strand))
+        (data[strand],where[strand],total[strand],max_val)=read_cuts(DATADIR+"DNase/DNASE.%s%s.txt.gz" % (cell_type,strand))
     return(data,where,total)
 
 def read_both_strands(cell_type):
